@@ -20,9 +20,11 @@ typedef struct Node {
 } Node;
 
 Node* hash_table[TABLE_SIZE];
+typedef unsigned TipoPesos[MAX_INGREDIENT_LENGTH];
+TipoPesos p;
 
 // ------------------------------ DEFINIR FUNCOES
-unsigned int hash(const char *str);
+int hash(const char *str);
 void init_hash_table();
 Node* create_node(const char *ingredient, int doc_id, int qtd);
 void insert_ingredient(const char *ingredient, int doc_id, int qtd);

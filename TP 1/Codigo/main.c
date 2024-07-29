@@ -6,27 +6,29 @@
 
 int main(){
   int i;
-    char file_list[100][MAX_FILE_NAME];
-    int num_files = 0;
+  
+  GeraPesos(p);
+  char file_list[100][MAX_FILE_NAME];
+  int num_files = 0;
 
-    // Inicializa a tabela hash
-    init_hash_table();
+  // Inicializa a tabela hash
+  init_hash_table();
 
-    // Lê a lista de arquivos
-    read_file_list("./ArquivosEntrada/Arquivos/entrada.txt", file_list, &num_files);
+  // Lê a lista de arquivos
+  read_file_list("./ArquivosEntrada/Arquivos/entrada.txt", file_list, &num_files);
 
-    // Processa cada arquivo
-    for (i = 0; i < num_files; i++) {
-        char file_path[MAX_FILE_NAME];
-        sprintf(file_path, "./ArquivosEntrada/Arquivos/ArquivosEntrada/%s", file_list[i]);
-        process_file(file_path, i);
-    }
+  // Processa cada arquivo
+  for (i = 0; i < num_files; i++) {
+      char file_path[MAX_FILE_NAME];
+      sprintf(file_path, "./ArquivosEntrada/Arquivos/ArquivosEntrada/ArquivosTrabalhoPraticoAEDSIIv2/%s", file_list[i]);
+      process_file(file_path, i+1);
+  }
 
-    // Imprime a tabela hash (opcional)
-    print_hash_table();
+  // Imprime a tabela hash (opcional)
+  print_hash_table();
 
 
-    return 0;
+  return 0;
 
   /*
   int i;
